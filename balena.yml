@@ -5,16 +5,20 @@ assets:
   repository:
     type: "blob.asset"
     data:
-      url: "https://github.com/balenalabs/balena-dash"
+      url: "https://github.com/martins1991/balena-dash-and-sense"
   logo:
     type: "blob.asset"
     data:
-      url: "https://raw.githubusercontent.com/balenalabs/balena-dash/master/logo.png"
+      url: "https://raw.githubusercontent.com/martins1991/balena-dash-and-sense/master/logo.png"
 data:
   applicationConfigVariables:
     - BALENA_HOST_CONFIG_gpu_mem: 128
+    - BALENA_HOST_CONFIG_hdmi_cvt: 1024 600 60 6 0 0 0
+    - BALENA_HOST_CONFIG_hdmi_force_hotplug: 0
+    - BALENA_HOST_CONFIG_hdmi_group: 2
+    - BALENA_HOST_CONFIG_hdmi_mode: 87
   applicationEnvironmentVariables:
-    - SHOW_CURSOR: 0
+    - SHOW_CURSOR: 1
     - CONTROL_TV: 0    
     - ENABLE_GPU: 1   
     - KIOSK: 1
@@ -22,13 +26,13 @@ data:
     - PORTAL_SSID: balenaDash
     - PORTAL_PASSPHRASE: balenaDash
     - ACTIVITY_TIMEOUT: 600
-    - LAUNCH_URL: ""
+    - LAUNCH_URL: "http://grafana:80"
     - ROTATE_DISPLAY: normal
     - WINDOW_SIZE: ""
     - WINDOW_POSITION: 0,0
     - LOCAL_HTTP_DELAY: 0
-    - FBCP_DISPLAY: ""
-  defaultDeviceType: "raspberrypi4-64"
+    - FBCP_DISPLAY: "adafruit-hx8357d-pitft"
+  defaultDeviceType: "raspberrypi3-64"
   supportedDeviceTypes:
     - "raspberrypi4-64"
     - "fincm3"
