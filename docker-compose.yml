@@ -3,7 +3,7 @@ volumes:
   settings:
   sense-data:
 services:
-influxdb:
+  influxdb:
     restart: always
     build: ./influxdb
     volumes:
