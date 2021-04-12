@@ -32,6 +32,7 @@ data:
     - WINDOW_POSITION: 0,0
     - LOCAL_HTTP_DELAY: 0
     - FBCP_DISPLAY: "adafruit-hx8357d-pitft"
+    - PORT: 1880
   defaultDeviceType: "raspberrypi3-64"
   supportedDeviceTypes:
     - "raspberrypi4-64"

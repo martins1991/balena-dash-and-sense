@@ -2,6 +2,7 @@ version: '2'
 volumes:
   settings:
   sense-data:
+  resin-data:
 services:
   influxdb:
     restart: always
@@ -56,3 +57,20 @@ services:
   fbcp:
     image: balenablocks/fbcp
     privileged: true
+  node-red:
+    build: ./node-red
+    volumes:
+      - 'resin-data:/data'
+    restart: always
+    privileged: true
+    network_mode: host
+    labels:
+      io.balena.features.supervisor-api: '1'
+    cap_add:
+      - SYS_RAWIO
+    devices:
+      - "/dev/mem:/dev/mem"
+      - "/dev/gpiomem:/dev/gpiomem"
+      - "/dev/i2c-1:/dev/i2c-1"
+    ports:
+      - 1880:1880
